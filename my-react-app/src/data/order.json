@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ORD001",
+    "customer": "Alice Smitch",
+    "total": 10.59,
+    "createdAt": "2025-07-01",
+    "status": "pending"
+  },
+  {
+    "id": "ORD002",
+    "customer": "Bob Johnson",
+    "total": 20.99,
+    "createdAt": "2025-07-02",
+    "status": "shipped"
+  },
+  {
+    "id": "ORD003",
+    "customer": "Charlie Brown",
+    "total": 15.49,
+    "createdAt": "2025-07-03",
+    "status": "delivered"
+  },
+  {
+    "id": "ORD004",
+    "customer": "Diana Prince",
+    "total": 30.0,
+    "createdAt": "2025-07-04",
+    "status": "cancelled"
+  }
+]

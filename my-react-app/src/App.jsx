@@ -60,9 +60,7 @@ function App() {
       <Card cardName={"Card 3"} description={"Way School"}/>
       </div>
       <List />
-      <h1>Ứng dụng Upload Ảnh với Firebase Storage</h1>
       <ImageUploader />
-
       </>
   );
 

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  justify-content: center;
+  /* display: flex; */
+}
+.app-expense {
+background: linear-gradient(180deg, #93B4D9 0%, #C5DBBD 100%);
+width: 100vw;
+height: 100vh;
+}
+.Expense-management {
+  width: 1408px;
+  height: 224px;
+  border: 1px solid black;
+  flex-shrink: 0;
+  background-color: #93B4D9;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.ui-board {
+  width: 400px;
+height: 224px;
+flex-shrink: 0;
+gap: 24px;
+border-radius: 8px;
+background: linear-gradient(257deg, rgba(208, 202, 202, 0.05) 5.34%, rgba(245, 245, 245, 0.20) 50.33%, rgba(233, 228, 228, 0.14) 97.09%), rgba(116, 118, 119, 0.48);
+box-shadow: 0px 2px 2px 1px #C4C4C4;
+}
+.ui-board2 {
+  margin: 12px 24px;
+  padding: 24px;
+  background-color: rgba(0, 55, 156, 0.301);
+  min-width: 240px;
+    border: 1px solid rgb(182, 182, 182);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  span {
+    font-size: 32px;
+  }
+}
+.input-formCash {
+  border: 1px solid black;
+  background-color: rgba(115, 109, 189, 0.363);
+}

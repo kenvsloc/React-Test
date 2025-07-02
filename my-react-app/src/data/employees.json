@@ -1,0 +1,14 @@
+{
+  "employee1": {
+    "name": "Jenny",
+    "Team": ["Band", "Design"],
+    "Dame": 66,
+    "Heart": 140
+  },
+  "employee2": {
+    "name": "John",
+    "Team": ["Development"],
+    "Dame": 70,
+    "Heart": 130
+  }
+}

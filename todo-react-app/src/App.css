@@ -1,0 +1,21 @@
+.task-item {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 10px;            /* Khoảng cách giữa các phần tử */
+  padding: 8px 0;        /* Padding nhẹ */
+}
+
+.task-item button.btn-done {
+  flex-shrink: 0;       /* Giữ nguyên kích thước nút */
+}
+
+.task-item span {
+  flex-grow: 1;         /* Tên công việc chiếm chỗ còn lại */
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.task-item .react-select-container {
+  width: 150px;         /* Giới hạn độ rộng của select nếu cần */
+}
