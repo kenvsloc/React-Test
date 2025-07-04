@@ -23,7 +23,7 @@ export const products: ProductProps[] = [
     title: "Bluetooth Speaker",
     description: "Portable speaker with deep bass and long battery life.",
     price: 49.99,
-    stock: 150,
+    stock: 149,
     image: "product-3.png"
 
   },
@@ -33,14 +33,24 @@ export const products: ProductProps[] = [
     description: "Powerful laptop for developers and designers.",
     price: 1499.99,
     stock: 80,
-    image: "product-4.png"
+    image: "product-4.webp"
   },
   {
     id: "5",
     title: "Digital Watch",
     description: "Stylish digital watch with multiple functions.",
     price: 199.99,
-    stock: 300,
-    image: "product-5.png"
+    stock: 99,
+    image: "product-5.webp"
+  },
+  {
+    id: "6",
+    title: "Gaming Mouse",
+    description: "Ergonomic gaming mouse with customizable buttons.",
+    price: 59.99,
+    stock: 120,
+    image: "product-6.png"
   }
+
+
 ];

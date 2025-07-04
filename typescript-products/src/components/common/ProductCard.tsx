@@ -1,6 +1,6 @@
 import type { ProductProps } from '../../types/typesData';
 import './ProductCard.css';
-
+import { useState } from 'react';
 
 interface ProductCardProps {
   product: ProductProps;
@@ -8,7 +8,18 @@ interface ProductCardProps {
 
 
 const ProductCard = ({ product }: ProductCardProps) => {
-    const imageUrl = `/images/products/${product.image}`;
+
+  const [quantity, setQuantity] = useState(1);
+  const add = () => { setQuantity(quantity + 1);}
+  const subtract = () =>
+  {
+    if (quantity >= 1) {
+      setQuantity(quantity - 1);
+    }
+  }
+
+
+  const imageUrl = `/images/products/${product.image}`;
 
 
   return (
@@ -18,10 +29,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <div className='product-details'>
       <p>{product.description}</p>
       <p><strong>${product.price.toFixed(2)}</strong></p>
-      <p className='product-stock'>In Stock: {product.stock}</p>
+      <div>
+        <button onClick={subtract}>-</button>
+        <button >{quantity}</button>
+        <button onClick={add}>+</button>
+      </div>
+
       </div>
     </div>
-  ); 
+  );
 };
 
 export default ProductCard;

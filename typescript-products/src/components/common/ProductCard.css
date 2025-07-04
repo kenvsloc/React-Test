@@ -6,7 +6,7 @@
     padding-left: 8px;
     font-size: 1.6rem;
     margin: 8px 0;
-    color: #555;
+    color: #d33918;
   }
   p {
     font-size: 1.4rem;
@@ -25,9 +25,7 @@
 }
 .product-image {
   width: 100%;
-  height: 200px;
+  height: 280px;
   object-fit: cover;
 }
-.product-stock {
-    text-align: right;
-}
+
