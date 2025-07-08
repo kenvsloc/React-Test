@@ -11,6 +11,10 @@
 .navbar-logo {
     margin-left: 20px;
 }
+.navbar-cart {
+display: flex;
+align-items: center;
+}
 .navbar-category {
     display: flex;
     gap: 40px;
@@ -25,6 +29,4 @@
     justify-content: center;
     padding: 4px;
 }
-.navbar-child :hover {
-    border-bottom: 2px solid gray;
-}
+

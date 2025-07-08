@@ -26,6 +26,11 @@ const NavBar =() => {
         <Link to ={"/products"}>
         <div className="navbar-child">Sales</div>
         </Link>
+        <div>
+        <Link to ={"/"}>
+        <img className='navbar-cart' src="/icons/shopping-bag.svg" alt="cart" width="18" height="18" />
+        </Link>
+        </div>
          </div>
     </div>
 

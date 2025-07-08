@@ -4,26 +4,27 @@ import './index.css'
 
 // Import pages/components
 import App from './App'
-import Dashboard from './Dashboard'
 import NotFoundPage from './components/NotFoundPage'
-import Dashboarditems from './Dashboarditems'
 import ProductList from './components/layout/ProductList'
 import ProductDetail from './components/layout/ProductDetail'
+import Home from './pages/Home'
 
 // React Router
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 
 // Cấu hình router
 const router = createBrowserRouter([
-  {path:'/', element: <App />},
-
+  {path:'/', element: <App />,
+    children: [
+      {index: true, element: <Home />},
+      {path: '/products', element: <ProductList />},
+      {path: '/products/:id', element: <ProductDetail />
+      },
+    ],
+  },
   // dashBoard
-  {path: '/dashboard/:id', element: <Dashboarditems />}, // Dynamic route for dashboard items
-  {path: '/dashboard', element: <Dashboard />},
-
-  //Products
-  {path: '/products/:id', element: <ProductDetail />},
-  {path: '/products', element: <ProductList />},
+  // {path: '/dashboard/:id', element: <Dashboarditems />}, // Dynamic route for dashboard items
+  // {path: '/dashboard', element: <Dashboard />},
 
   // 404 Error
   {path: '*', element: <NotFoundPage />},

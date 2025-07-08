@@ -1,15 +1,11 @@
 import ProductList from "../components/layout/ProductList"
-import MainLayout from "../components/layout/MainLayout"
 function Home() {
 
   return (
-    <MainLayout >
-    
+    <div>
       <h1>new arriver</h1>
       <ProductList />
-
-    </MainLayout>
-
+      </div>
   )
 }
 
