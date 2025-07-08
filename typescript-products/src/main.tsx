@@ -1,20 +1,31 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+
+// Import pages/components
 import App from './App'
-import App2 from './App2'
-import Dashboard from './dashBoard'
+import Dashboard from './Dashboard'
 import NotFoundPage from './components/NotFoundPage'
 import Dashboarditems from './Dashboarditems'
+import ProductList from './components/layout/ProductList'
+import ProductDetail from './components/layout/ProductDetail'
 
-
+// React Router
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 
+// Cấu hình router
 const router = createBrowserRouter([
   {path:'/', element: <App />},
-  {path: '/board', element: <App2 />},
+
+  // dashBoard
   {path: '/dashboard/:id', element: <Dashboarditems />}, // Dynamic route for dashboard items
   {path: '/dashboard', element: <Dashboard />},
+
+  //Products
+  {path: '/products/:id', element: <ProductDetail />},
+  {path: '/products', element: <ProductList />},
+
+  // 404 Error
   {path: '*', element: <NotFoundPage />},
   // {path: '/board/:id', element: <App2items />} // Catch-all route for 404 Not Found
 
