@@ -12,8 +12,7 @@ export interface CustomerTs extends BaseProps {
   name?: string;            // Tên khách hàng (nếu cần thiết)
 }
 
-export interface ProductProps {
-  id: string;
+export interface ProductProps extends BaseProps {
   title: string;
   category: string;
   description: string;
@@ -21,10 +20,18 @@ export interface ProductProps {
   stock: number;
   image?: string; // Optional image property
 }
+// Define the shape of your state
 
-export interface BaseEntity {
-  id: string;              // ID duy nhất cho mỗi bản ghi
-  createdAt?: Date;        // Thời gian tạo
-  updatedAt?: Date;        // Thời gian cập nhật lần cuối
-  isActive?: boolean;      // Trạng thái hoạt động
+export interface CartItem {
+  id: string;
+  title: string;
+  price: number;
+  image?: string;
+  quantity: number;
+}
+
+export interface CartState {
+  cart: CartItem[];
+  totalQuantity: number;
+  totalPrice: number;
 }

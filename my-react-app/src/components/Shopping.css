@@ -1,0 +1,13 @@
+.total {
+    margin-top: 60px;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+li {
+    font-size: 1rem;
+    list-style-type: none;
+}
+.remove-cart {
+    margin-left: 120px;
+}
