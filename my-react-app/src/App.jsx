@@ -19,7 +19,7 @@ import UserButton from "./UserButton.jsx";
 import EmployeeCard from "./components/EmpoleyCard.jsx";
 import ToggleButton from "./components/ToggleButton.jsx";
 import Shopping from "./components/Shopping.jsx";
-
+import ShopingCart from "./components/ShopingCart.jsx";
 
 
 
@@ -39,6 +39,7 @@ function App() {
 
   return (
       <>
+      <ShopingCart />
       <Shopping />
       <ToggleButton />
       <EmployeeCard />

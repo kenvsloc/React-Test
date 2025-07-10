@@ -1,16 +1,49 @@
 import { useState } from 'react';
 import order from '../data/order.json';
+import './Shopping.css'
+
 
 export default function Shopping() {
     const [cart, setCart] = useState([]);
 
+
+    const totalPrice = cart.reduce(
+  (acc, item) => acc + item.price * item.quantity,
+  0
+);
+
+
+    const incrementQuantity = (id) => {
+  setCart(prevCart =>
+    prevCart.map(item =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    )
+  );
+};
+
+const decrementQuantity = (id) => {
+  setCart(prevCart =>
+    prevCart
+      .map(item =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+      .filter(item => item.quantity > 0)
+  );
+};
+
+const removeFromCart = (id) => {
+  setCart(prevCart => prevCart.filter(item => item.id !== id));
+};
+
     const products = [
-        { id: 1, name: "Apple", price: 1.0 },
-        { id: 2, name: "Banana", price: 0.5 },
-        { id: 3, name: "Banana", price: 0.5 },
-        { id: 4, name: "Banana", price: 0.5 },
-        { id: 5, name: "Banana", price: 0.5 },
-        { id: 6, name: "Orange", price: 0.75 }
+        { id: 1, name: "Apple", price: 11 ,quantity: 1},
+        { id: 2, name: "kiwi", price: 15 ,quantity: 1},
+        { id: 3, name: "watermelon", price: 25 ,quantity: 1},
+        { id: 4, name: "Coconut", price: 27 ,quantity: 1},
+        { id: 5, name: "Banana", price: 36 ,quantity: 1},
+        { id: 6, name: "Orange", price: 12 ,quantity: 1}
     ];
 
     const orders = order;
@@ -36,10 +69,23 @@ export default function Shopping() {
     const tened = numbers.map((numbers) => numbers * 10);
 
     const addToCart = (product) => {
-        setCart([...cart, product]);
-    };
+  setCart((prevCart) => {
+    const existingItem = prevCart.find(item => item.id === product.id);
+
+    if (existingItem) {
+      return prevCart.map(item =>
+        item.id === product.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    } else {
+      return [...prevCart, { ...product, quantity: 1 }];
+    }
+  });
+};
 
     return (
+        <>
         <div className="shopping">
             <h1>Shopping Page</h1>
             <h2>List Oreder</h2>
@@ -62,13 +108,32 @@ export default function Shopping() {
                 <p>Your cart is empty.</p>
             ) : (
                 <ul>
-                    {cart.map((item, index) => (
-                        <li key={index}>
-                            {item.name} - ${item.price.toFixed(2)}
+
+                    {cart.map((item) => (
+                        <li key={item.id}>
+                           <span>{item.name} </span>
+                            ----<span>
+                                Count:{item.quantity}
+      <button onClick={() => decrementQuantity(item.id)}>-</button>
+                                {item.price.toFixed(2) * item.quantity}VND
+
+      <button onClick={() => incrementQuantity(item.id)}>+</button>
+
+                            </span>
+
+                            <button
+      className="remove-cart"
+      onClick={() => removeFromCart(item.id)}
+    >
+      X
+    </button>
                         </li>
                     ))}
+
+                    <li className='total'>Total: {totalPrice.toFixed(2)}VND</li>
                 </ul>
             )}
         </div>
+        </>
     );
 }

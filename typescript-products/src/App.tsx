@@ -1,17 +1,14 @@
-import './App.css'
-import ProductList from './components/layout/ProductList'
+import { Outlet } from 'react-router-dom'
+import NavBar from './components/common/HeaderBar'
 
 function App() {
 
   return (
-    <>
     <div>
-      <h1>Product List</h1>
-      <ProductList />
+      <NavBar />
+      <Outlet />
     </div>
-
-    </>
-  )
+  );
 }
 
 export default App
