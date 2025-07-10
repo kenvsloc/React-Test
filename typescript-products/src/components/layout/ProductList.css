@@ -56,3 +56,32 @@
   color: white;
   font-weight: bold;
 }
+
+.pay-cart {
+  width: 550px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  display: flex;
+  z-index: 555;
+  background-color: rgba(104, 104, 104, 0.651);
+  color: white;
+  font-weight: bold;
+  border: 1px solid black;
+   span {
+    font-size: 1.8rem;
+   }
+}
+
+.total-price {
+
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 5vh;
+  margin-left: 6vw;
+  h3 {
+    font-size: 2rem;
+  }
+}

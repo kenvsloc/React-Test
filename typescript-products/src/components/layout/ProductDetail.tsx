@@ -3,19 +3,57 @@ import { products } from '../../data/products';
 import ProductImageOnly from '../common/ProductImageOnly';
 import './ProductList.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { CartItem, CartState } from '../../types/typesData';
 import type { ProductProps } from '../../types/typesData';
 
 const ProductDetail = () => {
+
+  
   const { id } = useParams(); // Lấy `id` từ URL
   const product = products.find(p => p.id === id);
 
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
+
+  // Tự động lưu vào localStorage mỗi khi cart thay đổi
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  //button +/-
+  const incrementQuantity = (id: string) => {
+    setCart(prevCart =>
+      prevCart.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decrementQuantity = (id: string) => {
+    setCart(prevCart =>
+      prevCart
+        .map(item =>
+          item.id === id && item.quantity > 1
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter(item => item.quantity > 0)
+    );
+  };
+
+  const removeFromCart = (id: string) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== id));
+  };
+
+// Tính toán state
   const getCartState = (): CartState => {
     const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const totalPrice = cart.reduce((sum, item) =>
+      sum + item.price * item.quantity, 0);
 
     return {
       cart,
@@ -23,6 +61,8 @@ const ProductDetail = () => {
       totalPrice
     };
   };
+
+
 
   const cartState = getCartState();
 
@@ -82,17 +122,23 @@ const ProductDetail = () => {
       </div>
 
       {/* Mini Cart Preview */}
-      <div className="mini-cart">
-        <h3>Giỏ hàng ({cartState.totalQuantity})</h3>
+      <div className="pay-cart">
         {cartState.cart.length === 0 ? (
           <p>Giỏ hàng trống</p>
         ) : (
           <ul>
             {cartState.cart.map(item => (
               <li key={item.id}>
-                {item.title} x{item.quantity} = ${(item.price * item.quantity).toFixed(2)}
+                <span>{item.title}</span>
+                <button onClick={() => decrementQuantity(item.id)}>-</button> x {item.quantity}
+                <button onClick={() => incrementQuantity(item.id)}>+</button>
+                {(item.price * item.quantity).toFixed(2)}VND
+                <button className="remove-cart" onClick={() => removeFromCart(item.id)}>X</button>
               </li>
             ))}
+            <div className="total-price">
+            <h3  >Giỏ hàng ({cartState.totalPrice.toFixed(2)}VND)</h3>
+            </div>
           </ul>
         )}
       </div>

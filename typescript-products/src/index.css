@@ -10,4 +10,7 @@ body {
 a {
   text-decoration: none;
   color: inherit; /* giữ màu chữ như cũ */
-  }
+}
+li {
+  list-style: none;
+}

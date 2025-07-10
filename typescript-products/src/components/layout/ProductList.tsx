@@ -2,10 +2,14 @@ import { products } from '../../data/products';
 import ProductCard from '../common/ProductCard';
 import { Link } from 'react-router-dom'; // Thêm Link từ react-router-dom
 import './ProductList.css';
-import CounterComponent from '../CounterComponent';
+// import CounterComponent from '../CounterComponent';
 
 
 const ProductList = () => {
+
+  // let uuid = self.crypto.randomUUID();
+  // console.log(uuid);
+
   return (
     <>
 
@@ -16,7 +20,6 @@ const ProductList = () => {
         <ProductCard  product={product} />
         </Link>
       ))}
-      <CounterComponent />
     </div>
     </>
   );
