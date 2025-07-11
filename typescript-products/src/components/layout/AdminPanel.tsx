@@ -21,6 +21,13 @@ const AdminPanel = () => {
         <h3>List Product</h3>
         </div>
         <div className='margin_top_3'>
+        <div className="table-row header-row">
+          <div className="table-cell">Title</div>
+          <div className="table-cell">Category</div>
+          <div className="table-cell">Price</div>
+          <div className="table-cell">Stock</div>
+          <div className="table-cell">Image</div>
+        </div>
       {products.map(product => (
         <ProductTable key={product.id} product={product} />
       ))}

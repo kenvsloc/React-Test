@@ -16,6 +16,7 @@ export interface ProductProps extends BaseProps {
   title: string;
   description: string;
   price: number;
+  buy: number;
   stock: number;
   category?: string;
   image?: string; // Optional image property

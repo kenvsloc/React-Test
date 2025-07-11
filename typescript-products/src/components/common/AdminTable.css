@@ -5,19 +5,33 @@ p {
 
 .products-table {
     display: flex;
-    justify-content: center;
-    text-align: center;
     width: 100%;
-    margin-right: 60px;
-
 }
 
 .item-table {
-    margin-right: 12vw;
+    border-bottom: 1px solid gray;
+    min-width: 20%;
+    /* margin: auto; */
 }
 .item-image {
-    width: 50px;
-    height: 50px;
+    width: 76px;
+    height: 76px;
+    margin: 8px 0;
+    border-radius: 4px;
     object-fit: cover;
+    min-width: 20%;
+
+}
+.title {
+    display: inline-table;
+    justify-content: center;
+    align-items: center;
+
+
+    p {
+        margin-top: 32px;
+        font-size: 1.8rem;
+
+    }
 }
 
