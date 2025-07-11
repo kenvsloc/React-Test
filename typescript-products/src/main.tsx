@@ -8,6 +8,7 @@ import NotFoundPage from './components/NotFoundPage'
 import ProductList from './components/layout/ProductList'
 import ProductDetail from './components/layout/ProductDetail'
 import Home from './pages/Home'
+import ManagementAdmin from './pages/ManagementAdmin'
 
 // React Router
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   // dashBoard
   // {path: '/dashboard/:id', element: <Dashboarditems />}, // Dynamic route for dashboard items
-  // {path: '/dashboard', element: <Dashboard />},
+  {path: '/dashboard', element: <ManagementAdmin />},
 
   // 404 Error
   {path: '*', element: <NotFoundPage />},
