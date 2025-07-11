@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import type { CartItem, CartState } from '../../types/typesData';
 import type { ProductProps } from '../../types/typesData';
+import Buttons from '../../lib/button';
+
 
 const ProductDetail = () => {
 
-  
+
   const { id } = useParams(); // Lấy `id` từ URL
   const product = products.find(p => p.id === id);
 
@@ -111,12 +113,10 @@ const ProductDetail = () => {
             </div>
           </div>
           <div>
-            <button
-              className="add-to-cart"
-              onClick={() => addToCart(product)}
-            >
-              Thêm vào giỏ hàng
-            </button>
+            <Buttons className="add-to-cart" variant="primary"
+            onClick={() => addToCart(product)}>
+             Add To Cart
+            </Buttons>
           </div>
         </div>
       </div>

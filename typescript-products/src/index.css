@@ -1,3 +1,28 @@
+:root {
+
+  --ColorPrimary:hsl(0, 0%, 0%);
+  --ColorPrimaryHover: hsl(0, 0%, 30%); /* Tối hơn */
+  --ColorPrimaryActive: hsl(0, 0%, 55%); /* Tối hơn */
+
+  --ColorSecondary: hsl(0, 0%, 60%);
+  --ColorSecondaryHover: hsl(0, 0%, 30%);
+  --ColorSecondaryActive: hsla(0, 0%, 73%, 0.534);
+
+  --ColorAccent: hsl(0, 100%, 73%);
+  --ColorAccentHover: hsl(0, 16%, 73%);
+  --ColorAccentActive: hsl(0, 100%, 61%);
+
+
+  background-color: rgb(240, 240, 240);
+  --ff: "Mona Sans";
+  --h1: bold 54px/54px var(--ff);
+  --h2: bold 36px/36px var(--ff);
+  --h3: bold 24px/30px var(--ff);
+  --h4: bold 24px/30px var(--ff);
+  --p: 16px/30px var(--ff);
+  --subtext: 12px/20px var(--ff);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,4 +38,29 @@ a {
 }
 li {
   list-style: none;
+}
+.margin_top {
+  margin-top: 6vh;
+}
+.flex_row{
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+.flex_column{
+  display: flex;
+  flex-flow: column nowrap;
+}
+.center-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
 }

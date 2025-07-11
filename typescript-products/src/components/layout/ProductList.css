@@ -18,14 +18,10 @@
 
 
 }
-.product-info > * {
-
-}
 .product-info {
   display: flex;
   flex-direction: column;
   width: 340px;;
-  border: 1px solid gray;
 
   h2 {
     font-size: 1.8rem;
@@ -50,12 +46,7 @@
     margin-bottom: 4px;
   }
 }
-.add-to-cart {
-  width: 100%;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-}
+
 
 .pay-cart {
   width: 550px;
@@ -73,6 +64,12 @@
    span {
     font-size: 1.8rem;
    }
+}
+.add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .total-price {

@@ -10,7 +10,7 @@ function UserButton() {
     setTimeout(() => {
       alert('Song rui nha!');
       setLoading(false);
-    }, 1000);
+    }, 500);
   };
 
   return (
