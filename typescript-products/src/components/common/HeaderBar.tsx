@@ -14,10 +14,10 @@ const NavBar =() => {
         <Link to ={"/products"}>
         <div className="navbar-child">New & Featured</div>
         </Link>
-        <Link to ={"/products"}>
+        <Link to ={"/men"}>
         <div className="navbar-child">Men</div>
         </Link>
-        <Link to ={"/products"}>
+        <Link to ={"/women"}>
         <div className="navbar-child">Women</div>
         </Link>
         <Link to ={"/products"}>

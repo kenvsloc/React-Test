@@ -26,6 +26,7 @@ const router = createBrowserRouter([
   // dashBoard
   // {path: '/dashboard/:id', element: <Dashboarditems />}, // Dynamic route for dashboard items
   {path: '/dashboard', element: <ManagementAdmin />},
+  {path: '/men', element: <ManagementAdmin />},
 
   // 404 Error
   {path: '*', element: <NotFoundPage />},

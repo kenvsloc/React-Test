@@ -104,7 +104,7 @@ const ProductDetail = () => {
         <ProductImageOnly product={product} />
 
         <div className="product-info">
-          <h2>{product.title}</h2>
+          <h2>{product.id}</h2>
           <span>{product.category}</span>
           <div className="product-description">
             <h3>Giá: {product.price} VND</h3>

@@ -14,8 +14,8 @@ p {
     /* margin: auto; */
 }
 .item-image {
-    width: 76px;
-    height: 76px;
+    width: 75px;
+    height: 75px;
     margin: 8px 0;
     border-radius: 4px;
     object-fit: cover;
@@ -30,7 +30,7 @@ p {
 
     p {
         margin-top: 32px;
-        font-size: 1.8rem;
+        font-size: 1.rem;
 
     }
 }

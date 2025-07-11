@@ -9,13 +9,13 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
 
 
-  const imageUrl = `/images/products/${product.image}`;
+  const imageUrl = `/images/fashionFemale/${product.image}`;
 
 
   return (
     <div className='products-container' >
      <img className='product-image' src={imageUrl} alt={product.title} loading="lazy" />
-      <h2>{product.title}</h2>
+      <h2>{product.id}</h2>
         <div className='product-details'>
           <p className='product-catalog'>{product.category}</p>
           <p><strong>{product.price.toFixed(2)} VND</strong></p>

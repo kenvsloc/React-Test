@@ -11,12 +11,16 @@ interface ProductCardProps {
 const ProductTable = ({ product }: ProductCardProps) => {
 
 
-  const imageUrl = `/images/products/${product.image}`;
+  const imageUrl = `/images/fashionFemale/${product.image}`;
 
 
   return (
     <>
     <div className='products-table flex_row' >
+        <div className=' item-table '>
+                      <p>{product.id}</p>
+          <img className='item-image' src={imageUrl} alt={product.title} loading="lazy" />
+        </div>
         <div className='flex_column item-table title'>
             <p>{product.title}</p>
         </div>
@@ -29,9 +33,7 @@ const ProductTable = ({ product }: ProductCardProps) => {
         <div className='flex_column item-table title'>
             <p>{product.stock}</p>
         </div>
-        <div className='flex_column item-table title'>
-    <img className='item-image' src={imageUrl} alt={product.title} loading="lazy" />
-    </div>
+
     </div>
     </>
   );

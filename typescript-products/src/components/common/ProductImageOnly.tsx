@@ -5,7 +5,7 @@ interface ProductImageOnlyProps {
 }
 
 const ProductImageOnly = ({ product }: ProductImageOnlyProps) => {
-    const imageUrl = `/images/products/${product.image}`;
+    const imageUrl = `/images/fashionFemale/${product.image}`;
 
     return (
 
