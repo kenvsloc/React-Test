@@ -1,6 +1,7 @@
 import './adminPanel.css';
 import ProductTable from '../common/ProductTable';
 import { products } from '../../data/products';
+import { menShirts } from '../../data/maleShirt';
 // import CounterComponent from '../CounterComponent';
 
 
@@ -29,6 +30,9 @@ const AdminPanel = () => {
           <div className="table-cell">Stock</div>
         </div>
       {products.map(product => (
+        <ProductTable key={product.id} product={product} />
+      ))};
+      {menShirts.map(product => (
         <ProductTable key={product.id} product={product} />
       ))}
         </div>

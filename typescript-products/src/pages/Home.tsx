@@ -9,8 +9,9 @@ function Home() {
   return (
     <div>
       <h1>new arriver</h1>
-      <UserButton />
       <ProductList />
+      <UserButton />
+
       </div>
   )
 }

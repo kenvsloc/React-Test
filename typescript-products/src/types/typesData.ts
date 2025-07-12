@@ -20,6 +20,7 @@ export interface ProductProps extends BaseProps {
   stock: number;
   category?: string;
   image?: string; // Optional image property
+  type?: 'female' | 'male' | 'kids';
 }
 // Define the shape of your state
 

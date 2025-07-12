@@ -1,11 +1,11 @@
-import { products } from '../../data/products';
-import ProductCard2 from '../common/ProductCard';
+import { menShirts } from '../../data/maleShirt';
+import ProductCard2 from '../common/ProductCard2';
 import { Link } from 'react-router-dom'; // Thêm Link từ react-router-dom
 import './ProductList.css';
 // import CounterComponent from '../CounterComponent';
 
 
-const ProductList = () => {
+const ProductList2 = () => {
 
   // let uuid = self.crypto.randomUUID();
   // console.log(uuid);
@@ -13,11 +13,10 @@ const ProductList = () => {
   return (
     <>
 
-
     <div className='product-list'>
-      {products.map(product => (
-        <Link to={`/products/${product.id}`} key={product.id}>
-        <ProductCard2  product={product} />
+      {menShirts.map(maleShirts => (
+        <Link to={`/products/${maleShirts.id}`} key={maleShirts.id}>
+        <ProductCard2  maleShirts={maleShirts} />
         </Link>
       ))}
     </div>
@@ -25,4 +24,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default ProductList2;
