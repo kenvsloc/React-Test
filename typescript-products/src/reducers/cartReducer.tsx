@@ -1,25 +1,56 @@
-import type  { CartState, CartAction } from "../types/cartTypes";
+import type { CartItem, ProductProps } from '../types/typesData';
 
-const initialState: CartState = {
-  cart: [],
-  totalQuantity: 0,
-  totalPrice: 0,
+type CartAction =
+  | { type: 'ADD_TO_CART'; payload: ProductProps }
+  | { type: 'INCREMENT'; payload: string }
+  | { type: 'DECREMENT'; payload: string }
+  | { type: 'REMOVE'; payload: string };
 
-};
-const cartReducer = (state: CartState=initialState, action: CartAction): CartState => {
-  switch (action.type) {
-    case 'ADD_ITEM':
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-        totalQuantity: state.totalQuantity + 1,
-        totalPrice: state.totalPrice + action.payload.price,
-      };
-      
-      default:
-        return state;
+export const cartReducer = (state: CartItem[], action: CartAction): CartItem[] => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case 'ADD_TO_CART': {
+      const product = payload as ProductProps;
+      const existingItem = state.find(item => item.id === product.id);
+
+      if (existingItem) {
+        return state.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+
+      return [...state, { ...product, quantity: 1 }];
     }
- }
 
-export default cartReducer;
+    case 'INCREMENT': {
+      const id = payload as string;
+      return state.map(item =>
+        item.id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    }
 
+    case 'DECREMENT': {
+      const id = payload as string;
+      return state
+        .map(item =>
+          item.id === id && item.quantity > 1
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter(item => item.quantity > 0);
+    }
+
+    case 'REMOVE': {
+      const id = payload as string;
+      return state.filter(item => item.id !== id);
+    }
+
+    default:
+      return state;
+  }
+};

@@ -1,4 +1,4 @@
-import type { ProductProps } from './../types/typesData';
+import type { ProductProps } from '../types/typesData';
 
 export const menShirts: ProductProps[] = [
     {
@@ -9,7 +9,8 @@ export const menShirts: ProductProps[] = [
         price: 399.99,
         buy: 249.99,
         stock: 75,
-        image: "fashionMale-1.jpg"
+        image: "fashionMale-1.webp",
+        type: "male"
     },
     {
         id: "MSM-002",
@@ -19,7 +20,8 @@ export const menShirts: ProductProps[] = [
         price: 329.99,
         buy: 199.99,
         stock: 90,
-        image: "fashionMale-2.jpg"
+        image: "fashionMale-2.webp",
+        type: "male"
     },
     {
         id: "MSM-003",
@@ -29,7 +31,8 @@ export const menShirts: ProductProps[] = [
         price: 449.99,
         buy: 299.99,
         stock: 60,
-        image: "fashionMale-3.jpg"
+        image: "fashionMale-3.webp",
+        type: "male"
     },
     {
         id: "MSM-004",
@@ -39,7 +42,8 @@ export const menShirts: ProductProps[] = [
         price: 429.99,
         buy: 279.99,
         stock: 80,
-        image: "fashionMale-4.jpg"
+        image: "fashionMale-4.webp",
+        type: "male"
     },
     {
         id: "MSM-005",
@@ -49,7 +53,8 @@ export const menShirts: ProductProps[] = [
         price: 349.99,
         buy: 199.99,
         stock: 100,
-        image: "fashionMale-5.jpg"
+        image: "fashionMale-5.webp",
+        type: "male"
     },
     {
         id: "MSM-006",
@@ -59,7 +64,8 @@ export const menShirts: ProductProps[] = [
         price: 299.99,
         buy: 179.99,
         stock: 110,
-        image: "fashionMale-6.jpg"
+        image: "fashionMale-6.webp",
+        type: "male"
     },
 
     {
@@ -70,7 +76,8 @@ export const menShirts: ProductProps[] = [
         price: 319.99,
         buy: 189.99,
         stock: 85,
-        image: "fashionMale-7.jpg"
+        image: "fashionMale-7.webp",
+        type: "male"
     },
     {
         id: "MSM-008",
@@ -80,7 +87,8 @@ export const menShirts: ProductProps[] = [
         price: 369.99,
         buy: 229.99,
         stock: 70,
-        image: "fashionMale-8.jpg"
+        image: "fashionMale-8.webp",
+        type: "male"
     },
     {
         id: "MSM-009",
@@ -90,7 +98,8 @@ export const menShirts: ProductProps[] = [
         price: 279.99,
         buy: 159.99,
         stock: 95,
-        image: "fashionMale-9.jpg"
+        image: "fashionMale-9.webp",
+        type: "male"
     },
     {
         id: "MSM-010",
@@ -100,9 +109,119 @@ export const menShirts: ProductProps[] = [
         price: 349.99,
         buy: 199.99,
         stock: 88,
-        image: "fashionMale-10.jpg"
+        image: "fashionMale-10.webp",
+        type: "male"
     },
-
+    {
+    id: "MSM-011",
+    title: "Shirt-men11",
+    category: "Men's Formal Wear",
+    description: "Tuxedo-style dress shirt with satin panel and wing collar.",
+    price: 499.99,
+    buy: 329.99,
+    stock: 50,
+    image: "fashionMale-11.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-012",
+    title: "Shirt-men12",
+    category: "Men's Casual Wear",
+    description: "Soft flannel shirt with plaid pattern and warm lining.",
+    price: 379.99,
+    buy: 219.99,
+    stock: 80,
+    image: "fashionMale-12.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-013",
+    title: "Shirt-men13",
+    category: "Men's Streetwear",
+    description: "Hooded overshirt with utility pockets and rugged style.",
+    price: 429.99,
+    buy: 269.99,
+    stock: 65,
+    image: "fashionMale-13.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-014",
+    title: "Shirt-men14",
+    category: "Men's Sportswear",
+    description: "Breathable mesh-lined shirt for athletic training and running.",
+    price: 299.99,
+    buy: 169.99,
+    stock: 105,
+    image: "fashionMale-14.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-015",
+    title: "Shirt-men15",
+    category: "Men's Evening Wear",
+    description: "Silk-blend shirt with shimmer finish and elegant drape.",
+    price: 549.99,
+    buy: 349.99,
+    stock: 40,
+    image: "fashionMale-15.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-016",
+    title: "Shirt-men16",
+    category: "Men's Casual Wear",
+    description: "Cotton T-shirt with vintage graphic print and retro style.",
+    price: 199.99,
+    buy: 119.99,
+    stock: 120,
+    image: "fashionMale-16.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-017",
+    title: "Shirt-men17",
+    category: "Men's Denim Collection",
+    description: "Double-layer denim jacket with heavy-duty stitching and metal buttons.",
+    price: 599.99,
+    buy: 399.99,
+    stock: 35,
+    image: "fashionMale-17.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-018",
+    title: "Shirt-men18",
+    category: "Men's Business Casual",
+    description: "Tailored chino shirt with stretch fabric and modern fit.",
+    price: 399.99,
+    buy: 249.99,
+    stock: 85,
+    image: "fashionMale-18.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-019",
+    title: "Shirt-men19",
+    category: "Men's Fashion",
+    description: "Asymmetrical zip-up shirt with avant-garde design and bold color.",
+    price: 429.99,
+    buy: 279.99,
+    stock: 70,
+    image: "fashionMale-19.webp",
+    type: "male"
+  },
+  {
+    id: "MSM-020",
+    title: "Shirt-men20",
+    category: "Men's Summer Collection",
+    description: "Linen blend short-sleeve shirt with soft texture and light weight.",
+    price: 329.99,
+    buy: 189.99,
+    stock: 90,
+    image: "fashionMale-20.webp",
+    type: "male"
+  }
 
 ];
 

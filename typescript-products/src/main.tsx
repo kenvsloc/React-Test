@@ -5,8 +5,9 @@ import './index.css'
 // Import pages/components
 import App from './App'
 import NotFoundPage from './pages/NotFoundPage'
-import ProductList from './components/layout/ProductList'
-import ProductDetail from './components/layout/ProductDetail'
+import ProductList from './components/layout/ProductFemaleShirt'
+import ProductDetail from './components/productFashion/ProductDetail'
+import ProductList3 from './components/layout/ProductKid'
 import Home from './pages/Home'
 import PageMenShirts from './pages/PageMenShirts'
 import ManagementAdmin from './pages/ManagementAdmin'
@@ -19,16 +20,18 @@ const router = createBrowserRouter([
   {path:'/', element: <App />,
     children: [
       {index: true, element: <Home />},
-      {path: '/products', element: <ProductList />},
+      {path: '/women', element: <ProductList />},
       {path: '/men', element: <PageMenShirts />},
-      {path: '/products/:id', element: <ProductDetail />
-      },
+      {path: '/kids', element: <ProductList3 />},
+      {path: '/men/:id', element: <ProductDetail />},
+      {path: '/women/:id', element: <ProductDetail />},
+      {path: '/kids/:id', element: <ProductDetail />},
     ],
   },
   // dashBoard
   // {path: '/dashboard/:id', element: <Dashboarditems />}, // Dynamic route for dashboard items
   {path: '/dashboard', element: <ManagementAdmin />},
-  {path: '/kids', element: <ManagementAdmin />},
+  {path: '/sales', element: <ManagementAdmin />},
 
   // 404 Error
   {path: '*', element: <NotFoundPage />},

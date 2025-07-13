@@ -1,5 +1,5 @@
 import { menShirts } from '../../data/maleShirt';
-import ProductCard2 from '../common/ProductCard2';
+import ProductCard from '../common/ProductCard';
 import { Link } from 'react-router-dom'; // Thêm Link từ react-router-dom
 import './ProductList.css';
 // import CounterComponent from '../CounterComponent';
@@ -14,9 +14,9 @@ const ProductList2 = () => {
     <>
 
     <div className='product-list'>
-      {menShirts.map(maleShirts => (
-        <Link to={`/products/${maleShirts.id}`} key={maleShirts.id}>
-        <ProductCard2  maleShirts={maleShirts} />
+      {menShirts.map(product => (
+        <Link to={`/men/${product.id}`} key={product.id}>
+        <ProductCard  product={product} />
         </Link>
       ))}
     </div>

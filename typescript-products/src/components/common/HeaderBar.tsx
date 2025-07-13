@@ -11,7 +11,7 @@ const NavBar =() => {
         <img className='navbar-logo' src="/logos/H59.svg" alt="Logo" width="50" height="42" />
         </Link>
         <div className='navbar-category'>
-        <Link to ={"/products"}>
+        <Link to ={"/new"}>
         <div className="navbar-child">New & Featured</div>
         </Link>
         <Link to ={"/men"}>
@@ -23,7 +23,7 @@ const NavBar =() => {
         <Link to ={"/kids"}>
         <div className="navbar-child">Kids</div>
         </Link>
-        <Link to ={"/products"}>
+        <Link to ={"/sales"}>
         <div className="navbar-child">Sales</div>
         </Link>
         <div>

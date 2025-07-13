@@ -1,6 +1,6 @@
-import ProductList from "../components/layout/ProductList"
+import ProductList from "../components/layout/ProductFemaleShirt"
 import UserButton from "../components/common/UserButton"
-// import Test from "../components/common/Test"
+import Test from "../components/common/Test"
 
 function Home() {
 
@@ -9,6 +9,7 @@ function Home() {
   return (
     <div>
       <h1>new arriver</h1>
+      <Test />
       <ProductList />
       <UserButton />
 
