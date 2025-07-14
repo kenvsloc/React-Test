@@ -15,7 +15,6 @@ const store = configureStore({
 
 // Kiểu của toàn bộ state trong store
 export type RootState = ReturnType<typeof store.getState>;
-
 // Kiểu của hàm dispatch
 export type AppDispatch = typeof store.dispatch;
 
