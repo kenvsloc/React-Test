@@ -6,7 +6,7 @@ import './ProductList.css';
 // import CounterComponent from '../CounterComponent';
 
 
-const ProductList3 = () => {
+const PageKidShirt = () => {
 
   // let uuid = self.crypto.randomUUID();
   // console.log(uuid);
@@ -25,4 +25,4 @@ const ProductList3 = () => {
   );
 };
 
-export default ProductList3;
+export default PageKidShirt;

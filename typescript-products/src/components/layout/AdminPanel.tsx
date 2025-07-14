@@ -3,6 +3,7 @@ import ProductTable from '../common/ProductTable';
 import { womenShirts } from '../../data/femaleShirt';
 import { menShirts } from '../../data/maleShirt';
 import { kidsProducts } from '../../data/kidShirt';
+import { Link } from 'react-router-dom';
 // import CounterComponent from '../CounterComponent';
 
 
@@ -15,10 +16,12 @@ const AdminPanel = () => {
 
   return (
     <div className='container-admin flex_column'>
-        <div className='admin-panel margin_top_6'>
+        <div className='admin-panel margin_top_6 margin_bottom_3'>
+        <Link to ={"/"}>
+        <img className='navbar-logo' src="/logos/H59.svg" alt="Logo" width="50" height="42" />
         <h2>Dash Board</h2>
+        </Link>
         </div>
-
         <div className='Table-producs margin_top_1'>
         <h3>List Product</h3>
         </div>
