@@ -1,17 +1,22 @@
 // src/app/store.ts
 import { configureStore } from '@reduxjs/toolkit';
-// import rootReducer from './reducers'; // Nếu có nhiều reducer, bạn sẽ import ở đây
+import cartRedux from '../features/cart/cartSlice';
+// import userReducer from '../features/user/userSlice';
+
+
 
 const store = configureStore({
   reducer: {
     // Thêm các slice reducer của bạn tại đây
-    // Ví dụ:
-    // cart: cartReducer,
+    cart: cartRedux,
     // user: userReducer,
   },
 });
 
+// Kiểu của toàn bộ state trong store
 export type RootState = ReturnType<typeof store.getState>;
+
+// Kiểu của hàm dispatch
 export type AppDispatch = typeof store.dispatch;
 
 export default store;
