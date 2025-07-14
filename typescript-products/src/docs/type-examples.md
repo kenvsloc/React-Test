@@ -99,3 +99,91 @@ declare function create(o: object | null): void;
 create({ prop: 0 }); // ✔️ OK
 create(null);         // ✔️ OK
 create(42);          // ❌ Lỗi
+
+# 🔄 12. Type Assertion – Ép kiểu
+Khi bạn biết rõ hơn TypeScript về kiểu dữ liệu.
+
+let someValue: any = "this is a string";
+let strLength: number = (someValue as string).length;
+
+let strLength: number = (<string>someValue).length;
+
+# 🛑 13. Unknown – Chưa xác định kiểu
+An toàn hơn any. Phù hợp khi chưa chắc chắn kiểu dữ liệu.
+
+let value: unknown;
+value = "string";
+value = 123;
+value = false;
+
+// Muốn dùng phải kiểm tra kiểu trước
+if (typeof value === "string") {
+  console.log(value.toUpperCase());
+} else {
+  console.log("Giá trị không phải kiểu string");
+}
+
+# 🧬 14. Union Types – Nhiều kiểu cùng lúc
+Cho phép một biến nhận nhiều kiểu dữ liệu khác nhau.
+
+let id: string | number
+id = 101;      // ✔️
+id = "202";     // ✔️
+id = true;     // ❌ Lỗi
+
+# 🧩 15. Literal Types – Giá trị cố định
+Giới hạn giá trị của biến vào một vài hằng số nhất định.
+
+let direction: "up" | "down" | "left" | "right";
+direction = "left"; // ✔️ OK
+direction = "top";   // ❌ Lỗi
+direction = "up";   // ✔️ OK
+direction = "center"; // ❌ Lỗi
+
+# 🧪 16. Type Aliases – Định nghĩa kiểu riêng
+Tạo kiểu dữ liệu tùy chỉnh để tái sử dụng.
+
+type ID = number | string;
+
+let userId: ID = 123;     // ✔️
+let productId: ID = "abc"; // ✔️
+let orderId: ID = true;   // ❌ Lỗi
+
+# 🧱 17. Interface – Khai báo cấu trúc đối tượng
+Định nghĩa cấu trúc của một object.
+
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: "Alice",
+  age: 25
+};
+
+# 🧱 18. Function Types – Kiểu hàm
+Chỉ định kiểu cho hàm: tham số và kiểu trả về.
+
+let add: (a: number, b: number) => number;
+
+add = function(x: number, y: number): number {
+  return x + y;
+};
+
+# 🧱 19. Generics – Kiểu tổng quát
+Cho phép bạn tạo component làm việc với nhiều kiểu dữ liệu mà vẫn giữ được thông tin kiểu.
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output = identity<string>("myString"); // Kiểu string
+
+# 🧱 20. Type Inference – Tự động suy diễn kiểu
+TypeScript sẽ tự động suy diễn kiểu nếu bạn không chỉ định.
+
+let count = 10;     // TypeScript hiểu là kiểu number
+let name = "Alice"; // TypeScript hiểu là kiểu string
+
+```TS
