@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type {  PayloadAction } from '@reduxjs/toolkit';
 import type {  CartState, CartItem } from '../../types/cartTypes';
+import { findItem, recalculateTotals } from './cartUtils';
+
 // src/features/cart/cartSlice.ts
+
+
+// Hàm tính lại tổng số lượng và tổng giá
 
 
 
@@ -18,57 +23,48 @@ const cartSlice = createSlice({
     //them san pham vao gio
     addItem(state, action: PayloadAction<CartItem>) {
       const newItem = action.payload;
-      const existingItem = state.cart.find(item => item.id === newItem.id);
+      const existingItem = findItem(state, newItem.id);
 
       if (!existingItem) {
         state.cart.push({...newItem, quantity: 1});
-        state.totalQuantity += 1;
-        state.totalPrice += newItem.price;
       } else {
         existingItem.quantity += 1;
-        state.totalQuantity += 1;
-        state.totalPrice += newItem.price;
       }
+
+      recalculateTotals(state);
     },
 
     // Xóa hoàn toàn sản phẩm khỏi giỏ
-    removeItem(state, action: PayloadAction<{ id: string; price: number; quantity: number }>) {
-      const { id, price, quantity } = action.payload;
-      state.cart = state.cart.filter(item => item.id !== id);
-      state.totalQuantity -= quantity;
-      state.totalPrice -= price * quantity;
+    removeItem(state, action: PayloadAction<{ id: string }>) {
+      state.cart = state.cart.filter(item => item.id !== action.payload.id);
+      recalculateTotals(state);
     },
 
     // tang don vi san pham
     increaseItemQuantity(state, action: PayloadAction<string >) {
-      const  id  = action.payload;
-      const item = state.cart.find(item => item.id === id);
+      const item = findItem(state, action.payload);
 
-      if (item) {
-        item.quantity += 1;
-        state.totalQuantity += 1;
-        state.totalPrice += item.price;
-      }
+      if (item) item.quantity += 1;
+      recalculateTotals(state);
     },
 
     // giam don vi san pham
-    decreaseItemQuantity(state, action: PayloadAction<string>) {
-      const  id  = action.payload;
-      const item = state.cart.find(item => item.id === id);
 
-      if (item && item.quantity > 1) {
-        item.quantity -= 1;
-        state.totalQuantity -= 1;
-        state.totalPrice -= item.price;
-      }
+    decreaseItemQuantity(state, action: PayloadAction<string>) {
+      const item = findItem(state, action.payload);
+
+      if (item && item.quantity > 1) item.quantity -= 1;
+      recalculateTotals(state);
     },
+
 
     // reset cart
+
     clearCart(state) {
       state.cart = [];
-      state.totalQuantity = 0;
-      state.totalPrice = 0;
+      recalculateTotals(state);
     },
+
   },
 });
 
