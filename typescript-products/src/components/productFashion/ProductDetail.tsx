@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './detail.css';
 import ProductImageOnly from './ProductImageOnly';
