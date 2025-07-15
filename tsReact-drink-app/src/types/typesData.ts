@@ -12,15 +12,15 @@ export interface CustomerTs extends BaseProps {
   name?: string;            // Tên khách hàng (nếu cần thiết)
 }
 
-export interface ProductProps extends BaseProps {
+export interface ProductProps {
+  id: string;               // ID duy nhất
   title: string;
   description: string;
   price: number;
   buy: number;
-  stock: number;
   category?: string;
   image?: string; // Optional image property
-  type?: 'female' | 'male' | 'kids';
+  type?: 'coffee' | 'tea' | 'juice';
 }
 // Define the shape of your state
 
@@ -29,7 +29,7 @@ export interface CartItem extends ProductProps {
 }
 
 export interface CartState {
-  cart: CartItem[];
+  items: CartItem[];
   totalQuantity: number;
   totalPrice: number;
 
