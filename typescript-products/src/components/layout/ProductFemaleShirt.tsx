@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'; // Thêm Link từ react-router-dom
 import './ProductList.css';
 // import CounterComponent from '../CounterComponent';
 
-
 const PageWomenShirt = () => {
 
   // let uuid = self.crypto.randomUUID();
@@ -12,8 +11,6 @@ const PageWomenShirt = () => {
 
   return (
     <>
-
-
     <div className='product-list'>
       {womenShirts.map(product => (
         <Link to={`/women/${product.id}`} key={product.id}>

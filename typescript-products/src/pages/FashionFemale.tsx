@@ -1,7 +1,7 @@
 import PageWomenShirt from "../components/layout/ProductFemaleShirt";
 // import Test from "../components/common/Test"
 
-function PageWomenShirts() {
+export default function PageWomenShirts() {
 
 
 
@@ -12,4 +12,3 @@ function PageWomenShirts() {
   )
 }
 
-export default PageWomenShirts;
