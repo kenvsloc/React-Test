@@ -7,10 +7,8 @@ export default function Shopping() {
     const [cart, setCart] = useState([]);
 
 
-    const totalPrice = cart.reduce(
-  (acc, item) => acc + item.price * item.quantity,
-  0
-);
+    const totalPrice = cart.reduce((sum, item) =>
+       sum + item.price * item.quantity, 0);
 
 
     const incrementQuantity = (id) => {
@@ -97,7 +95,7 @@ const removeFromCart = (id) => {
             <ul>
                 {products.map((product) => (
                     <li key={product.id}>
-                        {product.name} - ${product.price.toFixed(2)}
+                        {product.name} - {product.price.toFixed(2)}VND
                         <button onClick={() => addToCart(product)}>Add to Cart</button>
                     </li>
                 ))}

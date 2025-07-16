@@ -1,5 +1,9 @@
 import type { ProductProps } from '../../types/typesData';
+import {getImagePath, getFallbackImagePath , DEFAULT_IMAGE_URL
+} from '../../features/productConfig';
 import './ProductCard.css';
+import  { useState } from 'react';
+
 
 interface ProductCardProps {
   product: ProductProps;
@@ -9,13 +13,50 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
 
 
-  const imageUrl = `/images/products/${product.image}`;
+  // const imageUrl = `/images/fashionFemale/${product.image}`;
+  const [currentImage, setCurrentImage] = useState(() => {
+    return getImagePath(product.type, product.image);
+  });
+
+  const handleError = () => {
+    const fallbackPaths = getFallbackImagePath(product.type, product.image);
+
+    const tryNextImage = (paths: string[]) => {
+      if (paths.length === 0) {
+        setCurrentImage(DEFAULT_IMAGE_URL);
+        return;
+      }
+
+      const [firstPath, ...restPaths] = paths;
+
+      fetch(firstPath)
+        .then(res => {
+          if (res.ok) {
+            setCurrentImage(firstPath);
+          } else {
+            throw new Error();
+          }
+        })
+        .catch(() => {
+          tryNextImage(restPaths); // Thử với đường dẫn tiếp theo
+        });
+    };
+
+    tryNextImage(fallbackPaths);
+  };
+
 
 
   return (
     <div className='products-container' >
-     <img className='product-image' src={imageUrl} alt={product.title} loading="lazy" />
-      <h2>{product.title}</h2>
+     <img
+      className='product-image'
+      src={currentImage} alt={product.title}
+      onError={handleError}
+      loading="lazy"
+      />
+
+      <h2>{product.id}</h2>
         <div className='product-details'>
           <p className='product-catalog'>{product.category}</p>
           <p><strong>{product.price.toFixed(2)} VND</strong></p>

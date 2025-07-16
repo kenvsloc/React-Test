@@ -14,19 +14,17 @@ export interface CustomerTs extends BaseProps {
 
 export interface ProductProps extends BaseProps {
   title: string;
-  category: string;
   description: string;
   price: number;
+  buy: number;
   stock: number;
+  category?: string;
   image?: string; // Optional image property
+  type?: 'female' | 'male' | 'kids'| 'accessory' | 'default';
 }
 // Define the shape of your state
 
-export interface CartItem {
-  id: string;
-  title: string;
-  price: number;
-  image?: string;
+export interface CartItem extends ProductProps {
   quantity: number;
 }
 
@@ -34,4 +32,5 @@ export interface CartState {
   cart: CartItem[];
   totalQuantity: number;
   totalPrice: number;
+
 }
