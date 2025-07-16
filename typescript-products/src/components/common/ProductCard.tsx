@@ -1,5 +1,6 @@
 import type { ProductProps } from '../../types/typesData';
-import {getImagePath, getFallbackImagePath , DEFAULT_IMAGE_URL } from '../../features/productConfig';
+import {getImagePath, getFallbackImagePath , DEFAULT_IMAGE_URL
+} from '../../features/productConfig';
 import './ProductCard.css';
 import  { useState } from 'react';
 
