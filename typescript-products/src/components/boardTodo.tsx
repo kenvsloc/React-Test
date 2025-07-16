@@ -8,10 +8,6 @@ const BoardTodo = () => {
     const dispatch = useDispatch();
       const todos = useSelector((state) => state.todos);
 
-
-
-
-
 }
 
 export default BoardTodo;
