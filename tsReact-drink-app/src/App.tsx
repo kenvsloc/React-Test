@@ -1,15 +1,14 @@
 
 import './App.css'
+// import DrinkCard from './components/common/CardDrink'
 
 function App() {
 
   return (
-    <>
-     <div>
 
-     </div>
-
-    </>
+    <div>
+      <h1>helo</h1>
+    </div>
   )
 }
 

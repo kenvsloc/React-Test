@@ -19,10 +19,11 @@ export interface ProductProps extends BaseProps {
   buy: number;
   stock: number;
   category?: string;
-  image?: string; // Optional image property
-  type?: 'female' | 'male' | 'kids'| 'accessory' | 'default';
+  image: string; // Optional image property
+  type: ProductType;
 }
 // Define the shape of your state
+export type ProductType = 'female' | 'male' | 'kids' | 'accessory' | 'default';
 
 export interface CartItem extends ProductProps {
   quantity: number;

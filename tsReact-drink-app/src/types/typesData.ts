@@ -11,6 +11,7 @@ export interface CustomerTs extends BaseProps {
   address?: string;         // Địa chỉ (tùy chọn)
   name?: string;            // Tên khách hàng (nếu cần thiết)
 }
+export type ProductType = 'coffee' | 'tea' | 'smoothie';
 
 export interface ProductProps {
   id: string;               // ID duy nhất
@@ -19,8 +20,8 @@ export interface ProductProps {
   price: number;
   buy: number;
   category?: string;
-  image?: string; // Optional image property
-  type?: 'coffee' | 'tea' | 'juice';
+  image: string; // Optional image property
+  type: ProductType;
 }
 // Define the shape of your state
 

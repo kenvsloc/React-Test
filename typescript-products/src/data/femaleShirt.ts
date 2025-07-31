@@ -11,7 +11,7 @@ export const womenShirts: ProductProps[] = [
     stock: 50,
     image: "fashionFemale-1.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-002",
@@ -23,7 +23,7 @@ export const womenShirts: ProductProps[] = [
     stock: 200,
     image: "fashionFemale-2.webp",
     type: "female",
-    
+
 
   },
   {
@@ -36,7 +36,7 @@ export const womenShirts: ProductProps[] = [
     stock: 149,
     image: "fashionFemale-3.webp",
     type: "female",
-    
+
 
   },
   {
@@ -49,7 +49,7 @@ export const womenShirts: ProductProps[] = [
     stock: 80,
     image: "fashionFemale-4.webp",
     type: "female",
-    
+
 
   },
   {
@@ -62,7 +62,7 @@ export const womenShirts: ProductProps[] = [
     stock: 99,
     image: "fashionFemale-5.webp",
     type: "female",
-    
+
 
   },
   {
@@ -75,7 +75,7 @@ export const womenShirts: ProductProps[] = [
     stock: 120,
     image: "fashionFemale-6.webp",
     type: "female",
-    
+
   },
   {
   id: "FSFSM-007",
@@ -87,7 +87,7 @@ export const womenShirts: ProductProps[] = [
   stock: 85,
   image: "fashionFemale-7.webp",
   type: "female",
-  
+
   },
   {
     id: "FSFSM-008",
@@ -99,7 +99,7 @@ export const womenShirts: ProductProps[] = [
     stock: 100,
     image: "fashionFemale-8.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-009",
@@ -111,7 +111,7 @@ export const womenShirts: ProductProps[] = [
     stock: 60,
     image: "fashionFemale-9.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-010",
@@ -123,7 +123,7 @@ export const womenShirts: ProductProps[] = [
     stock: 70,
     image: "fashionFemale-10.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-031",
@@ -135,7 +135,7 @@ export const womenShirts: ProductProps[] = [
     stock: 65,
     image: "fashionFemale-31.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-032",
@@ -147,7 +147,7 @@ export const womenShirts: ProductProps[] = [
     stock: 90,
     image: "fashionFemale-32.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-033",
@@ -159,7 +159,7 @@ export const womenShirts: ProductProps[] = [
     stock: 85,
     image: "fashionFemale-33.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-034",
@@ -171,7 +171,7 @@ export const womenShirts: ProductProps[] = [
     stock: 70,
     image: "fashionFemale-34.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-035",
@@ -183,7 +183,7 @@ export const womenShirts: ProductProps[] = [
     stock: 55,
     image: "fashionFemale-35.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-036",
@@ -195,7 +195,7 @@ export const womenShirts: ProductProps[] = [
     stock: 130,
     image: "fashionFemale-36.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-037",
@@ -207,7 +207,7 @@ export const womenShirts: ProductProps[] = [
     stock: 30,
     image: "fashionFemale-37.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-038",
@@ -219,7 +219,7 @@ export const womenShirts: ProductProps[] = [
     stock: 40,
     image: "fashionFemale-38.webp",
     type: "female",
-    
+
   },
    {
     id: "FSFSM-039",
@@ -231,7 +231,7 @@ export const womenShirts: ProductProps[] = [
     stock: 75,
     image: "fashionFemale-39.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-040",
@@ -243,7 +243,7 @@ export const womenShirts: ProductProps[] = [
     stock: 95,
     image: "fashionFemale-40.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-041",
@@ -255,7 +255,7 @@ export const womenShirts: ProductProps[] = [
     stock: 80,
     image: "fashionFemale-41.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-042",
@@ -267,7 +267,7 @@ export const womenShirts: ProductProps[] = [
     stock: 60,
     image: "fashionFemale-42.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-043",
@@ -279,7 +279,7 @@ export const womenShirts: ProductProps[] = [
     stock: 110,
     image: "fashionFemale-43.webp",
     type: "female",
-    
+
   },
   {
     id: "FSFSM-044",
@@ -291,7 +291,7 @@ export const womenShirts: ProductProps[] = [
     stock: 90,
     image: "fashionFemale-44.webp",
     type: "female",
-    
+
   }
 
 
