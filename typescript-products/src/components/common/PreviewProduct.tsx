@@ -1,5 +1,5 @@
 import type { ProductProps } from '../../types/typesData';
-import './ProductCard.css';
+import { Button } from '../ui/button';
 import { useState } from 'react';
 
 interface ProductCardProps {
@@ -34,7 +34,7 @@ const PreviewCard = ({ product }: ProductCardProps) => {
       <p><strong>${product.price.toFixed(2)}</strong></p>
       <div>
         <button onClick={subtract}>-</button>
-        <button >{quantity}</button>
+        <Button >{quantity}</Button>
         <button onClick={add}>+</button>
       </div>
 

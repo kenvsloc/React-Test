@@ -47,9 +47,11 @@ const ProductImageOnly = ({ product }: ProductImageOnlyProps) => {
   };
 
   return (
-    <div className="image-only">
+    <div className="">
       <img
-        className="product-image"
+        className=""
+        width="350"
+        height="350"
         src={currentImage}
         alt={product.title}
         onError={handleImageError}

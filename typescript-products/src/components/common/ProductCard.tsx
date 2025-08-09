@@ -1,8 +1,9 @@
 import type { ProductProps } from '../../types/typesData';
 import {getImagePath, getFallbackImagePath , DEFAULT_IMAGE_URL
 } from '../../features/productConfig';
-import './ProductCard.css';
 import  { useState } from 'react';
+import { Button } from '../ui/button';
+import { Heart } from 'lucide-react';
 
 
 interface ProductCardProps {
@@ -48,21 +49,31 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
 
   return (
-    <div className='products-container' >
+    <div className='mb-8' >
      <img
       className='product-image'
+      width="250" height="250"
       src={currentImage} alt={product.title}
       onError={handleError}
       loading="lazy"
       />
 
-      <h2>{product.id}</h2>
+      <h2 className='font-bold text-xl'>{product.id}</h2>
         <div className='product-details'>
-          <p className='product-catalog'>{product.category}</p>
-          <p><strong>{product.price.toFixed(2)} VND</strong></p>
+          <p className='text-gray-900/70'>{product.category}</p>
         </div>
-
+        <div className='relative mt-2'>
+          <p className='absolute top-0 left-0 my-3 text-xl font-medium text-red-700'><strong>{product.price.toFixed(2)} VND</strong></p>
+          <Button
+          className='absolute top-0 right-2
+          size-10 cursor-pointer
+          hover:bg-red-500 active:bg-red-700'
+          variant="secondary" size="icon">
+            <Heart />
+          </Button>
+          </div>
     </div>
+
   );
 };
 

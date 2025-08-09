@@ -1,5 +1,5 @@
 
-import './App.css'
+
 // import DrinkCard from './components/common/CardDrink'
 
 function App() {
