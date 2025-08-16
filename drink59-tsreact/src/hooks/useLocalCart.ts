@@ -29,11 +29,23 @@ export const useLocalCart = () => {
           )
         : [...prev, { ...item, quantity: qty }];
     });
+    const incrementQuantity = (id: string) =>
+      setCart(prev =>
+        prev.map(i => (i.id === id ? { ...i, quantity: i.quantity + 1 } : i))
+      );
+      const decrementQuantity = (id: string) =>
+        setCart(prev =>
+          prev.map(i =>
+            i.id === id && i.quantity > 1
+              ? { ...i, quantity: i.quantity - 1 }
+              : i
+          )
+        );
 
   const removeItem = (id: string) => setCart(prev => prev.filter(i => i.id !== id));
   const clearCart = () => setCart([]);
   const totalQuantity = cart.reduce((s, i) => s + i.quantity, 0);
   const totalPrice = cart.reduce((s, i) => s + i.price * i.quantity, 0);
 
-  return { cart, addItem, removeItem, clearCart, totalQuantity, totalPrice };
+  return { cart, addItem, removeItem, clearCart, totalQuantity, totalPrice, incrementQuantity, decrementQuantity  };
 };

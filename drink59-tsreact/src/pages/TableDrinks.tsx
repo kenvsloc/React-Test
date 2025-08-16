@@ -10,14 +10,14 @@ import { AllDrinkData } from "@/data/AllDrinkData";
 
 export default function TableDrinks() {
     return (
-        <div className="grid w-full [&>div]:max-h-[300px] [&>div]:border [&>div]:rounded">
+        <div className="grid w-[60&] [&>div]:max-h-[300px] [&>div]:border [&>div]:rounded">
             <Table>
                 <TableHeader>
                     <TableRow className="[&>*]:whitespace-nowrap">
                         <TableHead className="pl-4">ID</TableHead>
                         <TableHead>Product Name</TableHead>
                         <TableHead>Category</TableHead>
-                        <TableHead>Price (USD)</TableHead>
+                        <TableHead>Price (Vnd)</TableHead>
                         <TableHead>Stock Quantity</TableHead>
                         <TableHead>Supplier</TableHead>
                     </TableRow>

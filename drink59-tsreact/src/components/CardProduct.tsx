@@ -51,7 +51,7 @@ const CardProduct = ({ product }: ProductCardProps) => {
 
             <h2 className="font-bold text-lg">{product.id}</h2>
             <div className='text-gray-900/70'>{product.category}</div>
-            <div className='text-red-600 text-[18px] font-medium'>
+            <div className='text-red-600 text-[18px] font-medium mt-2'>
                 {product.price.toFixed(2)} Vnd
             </div>
 
