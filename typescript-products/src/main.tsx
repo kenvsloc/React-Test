@@ -18,6 +18,7 @@ import Home from './pages/Home'
 import PageMenShirts from './pages/PageMenShirts'
 import PageWomenShirts from './pages/FashionFemale'
 import ManagementAdmin from './pages/ManagementAdmin'
+import UserOrder from './pages/UserOrder'
 
 //
 
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
   // dashBoard
   // {path: '/dashboard/:id', element: <Dashboarditems />}, // Dynamic route for dashboard items
   {path: '/dashboard', element: <ManagementAdmin />},
-  {path: '/sales', element: <ManagementAdmin />},
+  {path: '/sales', element: <UserOrder />},
 
   // 404 Error
   {path: '*', element: <NotFoundPage />},

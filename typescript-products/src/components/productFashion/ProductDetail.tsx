@@ -1,16 +1,23 @@
 import { Link,useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import './detail.css';
 import ProductImageOnly from './ProductImageOnly';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
 
 // Types
 import type { ProductProps, CartItem, CartState } from '../../types/typesData';
 
 // Components
-import Buttons from '../../lib/button';
 
 // Utils
 import { findProductById } from '../../utils/findProductById(id)';
+import { Button } from '../ui/button';
 
 const ProductDetail = () => {
   const { id } = useParams(); // id có thể là string | undefined
@@ -94,7 +101,7 @@ const ProductDetail = () => {
       <div>
         <h2>Không tìm thấy sản phẩm!</h2>
         <Link to="/products">
-          <button>Quay lại danh sách sản phẩm</button>
+          <Button variant="default">Quay lại danh sách sản phẩm</Button>
         </Link>
       </div>
     );
@@ -102,38 +109,46 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className="back-to-home">
-        <Link to="/">
-          <button>Quay lại Trang chủ</button>
-        </Link>
+      <div className="ml-[6%] font-medium texl-xl mb-8">
+      <Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/women">Women</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>{product.category}</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
       </div>
 
-      <div className="product-detail">
+      <div className="flex justify-center ">
         <ProductImageOnly product={product} />
 
-        <div className="product-info">
-          <h2>{product.title}</h2>
-          <span>{product.category}</span>
+        <div className="ml-8">
+          <h2 className='font-bold text-xl'>{product.title}</h2>
+          <span className="text-gray-900/70 mb-8">{product.category}</span>
           <div className="product-description">
-            <h3>Giá: {product.price.toFixed(2)} VND</h3>
-            <div className="area-text">
+          <div className="area-text">
               <p>{product.description}</p>
             </div>
+            <h3 className='text-2xl font-medium text-red-700 mt-[40%]'>Giá: {product.price.toFixed(2)} VND</h3>
+            <Button
+            onClick={() => addToCart(product)}
+             className='mt-[28%] w-full text-xl'
+             variant='default'>Add to cart</Button>
           </div>
-          <div>
-            <Buttons
-              className="add-to-cart"
-              variant="primary"
-              onClick={() => addToCart(product)}
-            >
-              Add To Cart
-            </Buttons>
-          </div>
+
         </div>
       </div>
 
       {/* Mini Cart Preview */}
-      <div className="pay-cart">
+      <div className="w-full z-40 relative right-0 bg-zinc-500/50 border-amber-200 border-2">
         {cartState.cart.length === 0 ? (
           <p>Giỏ hàng trống</p>
         ) : (
@@ -155,6 +170,7 @@ const ProductDetail = () => {
             ))}
             <div className="total-price">
               <h3>Tổng cộng: {cartState.totalPrice.toFixed(2)} VND</h3>
+              <h3>Gio hang: {cartState.cart.length}</h3>
             </div>
           </ul>
         )}

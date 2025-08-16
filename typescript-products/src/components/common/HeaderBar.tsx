@@ -1,4 +1,3 @@
-import './header.css';
 import { Link } from 'react-router-dom';
 
 
@@ -6,11 +5,11 @@ import { Link } from 'react-router-dom';
 const NavBar =() => {
     return (
 
-    <div className="navbar-parent">
+    <div className="flex justify-center items-center w-full font-black">
         <Link to ={"/"}>
-        <img className='navbar-logo' src="/logos/H59.svg" alt="Logo" width="50" height="42" />
+        <img className='justify-start' src="/logos/H59.svg" alt="Logo" width="50" height="42" />
         </Link>
-        <div className='navbar-category'>
+        <div className='flex flex-row justify-center items-center gap-4'>
         <Link to ={"/new"}>
         <div className="navbar-child">New & Featured</div>
         </Link>
@@ -31,7 +30,7 @@ const NavBar =() => {
         <img className='navbar-cart' src="/icons/shopping-bag.svg" alt="cart" width="18" height="18" />
         </Link>
         </div>
-         </div>
+        </div>
     </div>
 
     );
